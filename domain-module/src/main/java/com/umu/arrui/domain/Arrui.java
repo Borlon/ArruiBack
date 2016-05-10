@@ -21,7 +21,7 @@ public class Arrui implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Long id;
 
 	@Column(name = "name")
 	private String name;
