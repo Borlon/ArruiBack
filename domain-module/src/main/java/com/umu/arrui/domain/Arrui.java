@@ -10,11 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "arrui")
 public class Arrui implements Serializable {
-
 
 	/**
 	 * 
@@ -23,7 +21,7 @@ public class Arrui implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private long id;
 
 	@Column(name = "name")
 	private String name;
@@ -31,29 +29,43 @@ public class Arrui implements Serializable {
 	@Column(name = "genero")
 	private String genero;
 
+	@Column(name = "edad")
+	private String edad;
+
 	@Column(name = "fecha_captura")
 	private Date fechaCaptura;
 
 	@Column(name = "fecha_recogida")
 	private Date fechaRecogida;
-	
+
+	@Column(name = "zona_captura")
+	private String zonaCaptura;
+
+	@Column(name = "observaciones", length = 255)
+	private String observaciones;
+
 	public Arrui() {
 		super();
 	}
 
-	public Arrui(String name, String genero, Date fechaCaptura, Date fechaRecogida) {
+	public Arrui(long id, String name, String genero, String edad, Date fechaCaptura, Date fechaRecogida,
+			String zonaCaptura, String observaciones) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.genero = genero;
+		this.edad = edad;
 		this.fechaCaptura = fechaCaptura;
 		this.fechaRecogida = fechaRecogida;
+		this.zonaCaptura = zonaCaptura;
+		this.observaciones = observaciones;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -73,6 +85,14 @@ public class Arrui implements Serializable {
 		this.genero = genero;
 	}
 
+	public String getEdad() {
+		return edad;
+	}
+
+	public void setEdad(String edad) {
+		this.edad = edad;
+	}
+
 	public Date getFechaCaptura() {
 		return fechaCaptura;
 	}
@@ -88,4 +108,21 @@ public class Arrui implements Serializable {
 	public void setFechaRecogida(Date fechaRecogida) {
 		this.fechaRecogida = fechaRecogida;
 	}
+
+	public String getZonaCaptura() {
+		return zonaCaptura;
+	}
+
+	public void setZonaCaptura(String zonaCaptura) {
+		this.zonaCaptura = zonaCaptura;
+	}
+
+	public String getObservaciones() {
+		return observaciones;
+	}
+
+	public void setObservaciones(String observaciones) {
+		this.observaciones = observaciones;
+	}
+
 }
