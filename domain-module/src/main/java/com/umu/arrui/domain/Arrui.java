@@ -3,11 +3,13 @@ package com.umu.arrui.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -43,6 +45,12 @@ public class Arrui implements Serializable {
 
 	@Column(name = "observaciones", length = 255)
 	private String observaciones;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	private CuernoDerecho cuernoDerecho;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	private CuernoIzquierdo cuernoIzquierdo;
 
 	public Arrui() {
 		super();
@@ -123,6 +131,22 @@ public class Arrui implements Serializable {
 
 	public void setObservaciones(String observaciones) {
 		this.observaciones = observaciones;
+	}
+
+	public CuernoDerecho getCuernoDerecho() {
+		return cuernoDerecho;
+	}
+
+	public void setCuernoDerecho(CuernoDerecho cuernoDerecho) {
+		this.cuernoDerecho = cuernoDerecho;
+	}
+
+	public CuernoIzquierdo getCuernoIzquierdo() {
+		return cuernoIzquierdo;
+	}
+
+	public void setCuernoIzquierdo(CuernoIzquierdo cuernoIzquierdo) {
+		this.cuernoIzquierdo = cuernoIzquierdo;
 	}
 
 }

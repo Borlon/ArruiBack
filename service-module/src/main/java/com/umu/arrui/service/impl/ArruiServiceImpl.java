@@ -30,4 +30,9 @@ public class ArruiServiceImpl implements IArruiService {
 		List<ArruiSrvDTO> listDto = mapper.mapAsList(list, ArruiSrvDTO.class);
 		return listDto;
 	}
+
+	@Override
+	public Arrui save(Arrui arrui) {
+		return arruiRepository.save(arrui);
+	}
 }
