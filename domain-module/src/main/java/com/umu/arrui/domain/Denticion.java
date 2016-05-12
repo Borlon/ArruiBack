@@ -20,29 +20,16 @@ public class Denticion implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	
+	private Long id;
+
 	@Column(name = "dientes_leche")
-	private int dientesLeche;
-	
+	private Integer dientesLeche;
+
 	@Column(name = "dientes_permanentes")
-	private int dientesPermanentes;
-	
+	private Integer dientesPermanentes;
+
 	@Column(name = "observaciones")
 	private String observaciones;
-
-	public Denticion() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Denticion(long id, int dientesLeche, int dientesPermanentes, String observaciones) {
-		super();
-		this.id = id;
-		this.dientesLeche = dientesLeche;
-		this.dientesPermanentes = dientesPermanentes;
-		this.observaciones = observaciones;
-	}
 
 	public long getId() {
 		return id;
@@ -75,5 +62,5 @@ public class Denticion implements Serializable {
 	public void setObservaciones(String observaciones) {
 		this.observaciones = observaciones;
 	}
-	
+
 }

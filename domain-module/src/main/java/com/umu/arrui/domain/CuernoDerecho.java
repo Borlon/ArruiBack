@@ -5,7 +5,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="cuerno_derecho")
-public class CuernoDerecho extends Cuerno {
+public class CuernoDerecho extends MedidasCuerno {
 	
 	/**
 	 * 

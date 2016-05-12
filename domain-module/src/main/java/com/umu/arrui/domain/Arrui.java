@@ -29,7 +29,7 @@ public class Arrui implements Serializable {
 	private String name;
 
 	@Column(name = "genero")
-	private String genero;
+	private Boolean genero;
 
 	@Column(name = "edad")
 	private String edad;
@@ -45,35 +45,18 @@ public class Arrui implements Serializable {
 
 	@Column(name = "observaciones", length = 255)
 	private String observaciones;
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	private CuernoDerecho cuernoDerecho;
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	private CuernoIzquierdo cuernoIzquierdo;
 
-	public Arrui() {
-		super();
-	}
+	@OneToOne(cascade = CascadeType.ALL)
+	private Medidas medidas;
 
-	public Arrui(long id, String name, String genero, String edad, Date fechaCaptura, Date fechaRecogida,
-			String zonaCaptura, String observaciones) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.genero = genero;
-		this.edad = edad;
-		this.fechaCaptura = fechaCaptura;
-		this.fechaRecogida = fechaRecogida;
-		this.zonaCaptura = zonaCaptura;
-		this.observaciones = observaciones;
-	}
+	@OneToOne(cascade = CascadeType.ALL)
+	private DeterminacionEdad determinacionEdad;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -85,11 +68,11 @@ public class Arrui implements Serializable {
 		this.name = name;
 	}
 
-	public String getGenero() {
+	public Boolean getGenero() {
 		return genero;
 	}
 
-	public void setGenero(String genero) {
+	public void setGenero(Boolean genero) {
 		this.genero = genero;
 	}
 
@@ -133,20 +116,20 @@ public class Arrui implements Serializable {
 		this.observaciones = observaciones;
 	}
 
-	public CuernoDerecho getCuernoDerecho() {
-		return cuernoDerecho;
+	public Medidas getMedidas() {
+		return medidas;
 	}
 
-	public void setCuernoDerecho(CuernoDerecho cuernoDerecho) {
-		this.cuernoDerecho = cuernoDerecho;
+	public void setMedidas(Medidas medidas) {
+		this.medidas = medidas;
 	}
 
-	public CuernoIzquierdo getCuernoIzquierdo() {
-		return cuernoIzquierdo;
+	public DeterminacionEdad getDeterminacionEdad() {
+		return determinacionEdad;
 	}
 
-	public void setCuernoIzquierdo(CuernoIzquierdo cuernoIzquierdo) {
-		this.cuernoIzquierdo = cuernoIzquierdo;
+	public void setDeterminacionEdad(DeterminacionEdad determinacionEdad) {
+		this.determinacionEdad = determinacionEdad;
 	}
 
 }

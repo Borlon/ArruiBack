@@ -2,11 +2,13 @@ package com.umu.arrui.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,29 +22,22 @@ public class Medidas implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	
+	private Long id;
+
 	@Column(name = "entre_arcos")
 	private Float entreArcos;
-	
+
 	@Column(name = "entre_cuernos")
 	private Float entreCuernos;
-	
+
 	@Column(name = "cuerno_hocico")
 	private Float cuernoHocico;
 
-	public Medidas() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	@OneToOne(cascade = CascadeType.ALL)
+	private CuernoDerecho cuernoDerecho;
 
-	public Medidas(long id, Float entreArcos, Float entreCuernos, Float cuernoHocico) {
-		super();
-		this.id = id;
-		this.entreArcos = entreArcos;
-		this.entreCuernos = entreCuernos;
-		this.cuernoHocico = cuernoHocico;
-	}
+	@OneToOne(cascade = CascadeType.ALL)
+	private CuernoIzquierdo cuernoIzquierdo;
 
 	public long getId() {
 		return id;
@@ -75,5 +70,5 @@ public class Medidas implements Serializable {
 	public void setCuernoHocico(Float cuernoHocico) {
 		this.cuernoHocico = cuernoHocico;
 	}
-	
+
 }

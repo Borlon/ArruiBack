@@ -6,9 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="cuerno_izquierdo")
-public class CuernoIzquierdo extends Cuerno implements Serializable{
-	
+@Table(name = "cuerno_izquierdo")
+public class CuernoIzquierdo extends MedidasCuerno implements Serializable {
+
 	/**
 	 * 
 	 */
