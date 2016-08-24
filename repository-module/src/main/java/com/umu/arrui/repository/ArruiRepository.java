@@ -8,6 +8,6 @@ import com.umu.arrui.domain.Arrui;
 /**
  * Spring Data JPA repository for the Arrui entity.
  */
-public interface ArruiRepository extends JpaRepository<Arrui, Integer>{
+public interface ArruiRepository extends JpaRepository<Arrui, Long>{
 
 }

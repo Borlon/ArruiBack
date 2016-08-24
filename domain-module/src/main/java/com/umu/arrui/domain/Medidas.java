@@ -25,13 +25,13 @@ public class Medidas implements Serializable {
 	private Long id;
 
 	@Column(name = "entre_arcos")
-	private Float entreArcos;
+	private Double entreArcos;
 
 	@Column(name = "entre_cuernos")
-	private Float entreCuernos;
+	private Double entreCuernos;
 
 	@Column(name = "cuerno_hocico")
-	private Float cuernoHocico;
+	private Double cuernoHocico;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	private CuernoDerecho cuernoDerecho;
@@ -43,32 +43,47 @@ public class Medidas implements Serializable {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public Float getEntreArcos() {
+	public Double getEntreArcos() {
 		return entreArcos;
 	}
 
-	public void setEntreArcos(Float entreArcos) {
+	public void setEntreArcos(Double entreArcos) {
 		this.entreArcos = entreArcos;
 	}
 
-	public Float getEntreCuernos() {
+	public Double getEntreCuernos() {
 		return entreCuernos;
 	}
 
-	public void setEntreCuernos(Float entreCuernos) {
+	public void setEntreCuernos(Double entreCuernos) {
 		this.entreCuernos = entreCuernos;
 	}
 
-	public Float getCuernoHocico() {
+	public Double getCuernoHocico() {
 		return cuernoHocico;
 	}
 
-	public void setCuernoHocico(Float cuernoHocico) {
+	public void setCuernoHocico(Double cuernoHocico) {
 		this.cuernoHocico = cuernoHocico;
 	}
 
+	public CuernoDerecho getCuernoDerecho() {
+		return cuernoDerecho;
+	}
+
+	public void setCuernoDerecho(CuernoDerecho cuernoDerecho) {
+		this.cuernoDerecho = cuernoDerecho;
+	}
+
+	public CuernoIzquierdo getCuernoIzquierdo() {
+		return cuernoIzquierdo;
+	}
+
+	public void setCuernoIzquierdo(CuernoIzquierdo cuernoIzquierdo) {
+		this.cuernoIzquierdo = cuernoIzquierdo;
+	}
 }

@@ -1,4 +1,4 @@
-package com.umu.arrui.service.domain;
+package com.umu.arrui.rest.domain;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -8,7 +8,7 @@ import java.util.Date;
  * @author David
  *
  */
-public class ArruiSrvDTO implements Serializable {
+public class ArruiDTO implements Serializable {
 	
 	/**
 	 * 
