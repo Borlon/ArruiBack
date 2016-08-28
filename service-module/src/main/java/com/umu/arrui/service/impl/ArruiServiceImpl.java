@@ -33,4 +33,9 @@ public class ArruiServiceImpl implements IArruiService {
 		Arrui arrui = arruiRepository.findOne(id);
 		return arrui;
 	}
+
+	@Override
+	public void deleteArrui(Long id) {
+		arruiRepository.delete(id);
+	}
 }

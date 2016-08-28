@@ -9,4 +9,5 @@ public interface IArruiService {
 	List<Arrui> getAll();
 	Arrui save (Arrui arrui);
 	Arrui getArrui(Long id);
+	void deleteArrui(Long id);
 }
