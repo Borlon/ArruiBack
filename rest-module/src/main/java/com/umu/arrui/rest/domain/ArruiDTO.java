@@ -24,6 +24,8 @@ public class ArruiDTO implements Serializable {
 	private Date fechaCaptura;
 
 	private Date fechaRecogida;
+	
+	private String zonaCaptura;
 
 	public Integer getId() {
 		return id;
@@ -63,6 +65,14 @@ public class ArruiDTO implements Serializable {
 
 	public void setFechaRecogida(Date fechaRecogida) {
 		this.fechaRecogida = fechaRecogida;
+	}
+
+	public String getZonaCaptura() {
+		return zonaCaptura;
+	}
+
+	public void setZonaCaptura(String zonaCaptura) {
+		this.zonaCaptura = zonaCaptura;
 	}
 	
 }
