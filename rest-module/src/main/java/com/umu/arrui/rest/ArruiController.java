@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.umu.arrui.domain.Arrui;
 import com.umu.arrui.rest.domain.ArruiDTO;
 import com.umu.arrui.service.IArruiService;
-import com.umu.arrui.service.IArruiServiceTest;
 
 import ma.glasnost.orika.MapperFacade;
 
@@ -23,9 +22,6 @@ public class ArruiController {
 
 	@Inject
 	private IArruiService arruiService;
-	
-	@Inject
-	private IArruiServiceTest arruiServiceTest;
 	
 	@Inject
 	private MapperFacade mapper;
@@ -59,10 +55,5 @@ public class ArruiController {
 	@RequestMapping(value="/arrui/{id}", method = RequestMethod.DELETE)
 	public void deleteArrui(@PathVariable Long id){
 		arruiService.deleteArrui(id);
-	}
-	
-	@RequestMapping(value="/test")
-	public void createArruiTest() {
-		arruiServiceTest.createArrui();
 	}
 }

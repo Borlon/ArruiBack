@@ -18,15 +18,15 @@ import com.umu.arrui.domain.LocalizacionDrch;
 import com.umu.arrui.domain.LocalizacionIzq;
 import com.umu.arrui.domain.Medidas;
 import com.umu.arrui.domain.Oestrus;
-import com.umu.arrui.repository.ArruiRepository;
+import com.umu.arrui.service.IArruiService;
 import com.umu.arrui.service.IArruiServiceTest;
 
 @Service
 @Transactional
 public class ArruiServiceTestImpl implements IArruiServiceTest{
-
+	
 	@Inject
-	private ArruiRepository arruiRepository;
+	private IArruiService arruiService;
 	
 	@Override
 	public void createArrui(){
@@ -40,7 +40,7 @@ public class ArruiServiceTestImpl implements IArruiServiceTest{
 		Oestrus oestru = new Oestrus();
 		List<Oestrus> oestrusList = new ArrayList<Oestrus>();
 		
-		arruiTest.setName("Arrui1");
+		arruiTest.setName("Arrui2");
 		arruiTest.setGenero(true);
 		arruiTest.setEdad("2");
 		arruiTest.setFechaCaptura(new Date());
@@ -50,7 +50,7 @@ public class ArruiServiceTestImpl implements IArruiServiceTest{
 		arruiTest.setObservaciones("Prueba inserción arrui");
 		arruiTest.setObservacionesMuco("Ninguna");
 		arruiTest.setOestrusActivo(true);
-		arruiTest.setZonaCaptura("Madrid");
+		arruiTest.setZonaCaptura("Badajoz");
 		
 		medidas.setCuernoHocico(10.5);
 		medidas.setEntreArcos(5.0);
@@ -74,6 +74,6 @@ public class ArruiServiceTestImpl implements IArruiServiceTest{
 		
 		arruiTest.setOestrus(oestrusList);
 		
-		arruiRepository.save(arruiTest);
+		arruiService.save(arruiTest);
 	}
 }
