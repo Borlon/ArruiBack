@@ -40,7 +40,7 @@ public class ArruiServiceTestImpl implements IArruiServiceTest{
 		Oestrus oestru = new Oestrus();
 		List<Oestrus> oestrusList = new ArrayList<Oestrus>();
 		
-		arruiTest.setName("Arrui2");
+		arruiTest.setName("Arrui1");
 		arruiTest.setGenero(true);
 		arruiTest.setEdad("2");
 		arruiTest.setFechaCaptura(new Date());
